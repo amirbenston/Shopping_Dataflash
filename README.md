@@ -1,34 +1,102 @@
 # shopping-behavior
+Statistical analysis of customer shopping data using Python, including pandas, groupby operations, pivot tables, descriptive statistics and data visualizations.
 
-##  My Analytical Questions
+## Description
+This project analyzes customer shopping behavior across seasons, genders, and loyalty levels. Focus areas include purchase frequency, promo code effectiveness, as well as product and color preferences. The goal is to identify trends such as seasonality of shoppers, which demographics buy the most, and which market outreach strategies can be applied to maximize purchases.
 
-What are 6 analytical questions you can ask about this dataset?
+## Quick Demo
 
-1.  Using the purchase amount column Which gender spent the most money? This can help determine plans for best market outreach strategies.
+![Shopping Behavior Summary](revenue_by_season.png)
+Winter is the season with the most total revenue, followed by Fall, Summer and Spring.
 
-2. Which season did customers spend the most money? This can help determine when should we run promotions? What time of year should we put the most resources into marketing. 
+## Setup and Run
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/amirbenston/Shopping_Dataflash.git
+   cd shopping-behavior
+   ```
+
+2. Make sure the data files are in the `data/raw/` folder:
+   - `data/raw/shopping.csv`
+
+3. (Optional) Create and activate a virtual environment.
+
+4. Install dependencies:
+   ```bash
+   pip install matplotlib
+   pip install pandas
+   ```
+
+5. Open and run the analysis notebook:
+   ```bash
+   jupyter notebook explore.ipynb
+   ```
+   or open `explore.ipynb` directly in VS Code and run all cells.
+
+6. Review the output: 
+- Descriptive statistics and breakdown of purchases by season, gender, and color in the notebook.
+- Total revenue by season clearly displayed as a bar graph.
+- Interpretation of findings after tables and graphs in the `explore.ipynb` as well as highlights below.
+
+## Key Findings
+
+## Spending by gender
+- Total spend:
+  - Male customers: 76,032  
+  - Female customers: 73,620  
+- Number of purchases:
+  - Male customers: 1,971  
+  - Female customers: 1,984  
+- Average spend per purchase:
+  - Male customers: 38.6  
+  - Female customers: 38.9  
+
+Spending is nearly even amongst genders, it makes sense to target both groups with advertising and promotions.
 
 
-3. What is the frequency of purchases by gender for each season?
+## Seasonality and purchase frequency
+- Total revenue by season:
+  - Winter: 50,681  
+  - Fall: 41,004  
+
+Winter and fall are the strongest seasons for revenue, so promotions and marketing should take advantage of increased activity during these periods.
+
+Winter is the season with the highest purchase counts across all genders:
+  - Female: 655 purchases  
+  - Male: 651 purchases  
+  - Non‑binary: 15 purchases  
+
+This supports investing in winter‑focused campaigns, especially around top winter items such as black leggings.
+
+## Loyal customers (10+ purchases)
+- Among customers with 10 or more purchases, females slightly outnumber males:
+  - Female loyal customers: 449  
+  - Male loyal customers: 444  
+
+Loyalty is almost evenly split between male and female customers, suggesting retention efforts should continue to target both groups.
 
 
-4. Out of our most loyal customers people who made 10 or more purchases what purchase frequency category does this group belong to the most?
+  ## Most Popular Color By Season:
+  - Fall: Brown (117)
+  - Spring: Baby Blue (83)
+  - Summer: Lavender (120)
+  - Winter: Black (155)
+
+  ## Most Popular Clothing Item By Season:
+  - Fall: Socks(87)
+  - Spring: Running Shoes(106)
+  - Summer: Shorts(177)
+  - Winter: Leggings(157)
+
+ ## Effect Of Promo Codes On Order Value:
+ - No Promo Code: average order value 30.17
+ - With Promo Code: average order value 50.02
+ 
+ Promotions appear effective at increasing revenue per order.
 
 
-5. Out of our most loyal customers people who made purchases 10 or more times what gender are they most likely to belong to? Again this can help with market outreach strategies? Which group should we target for advertising? What form of advertsing would be best for us to invest?
-
-6. What is the average age of our most loyal customers people who made purchases 10 or more times.
-
-
-  #  Required Analytical questions?
-
-  1.  What are the most popular colors by season? In fall the most popular color is brown with a frequency of 117. In Spring the top color is baby blue with a frequency of 83. For Summer lavender with a frequency of 120 and in winter black with a frequency of 155.
-
-  2. What is the most popular clothing item by season? For fall the most popular item was socks with a frequency of 87. For spring running shoes was most popular with a frequency of 106. In the Summer shorts was most popular with a frequency 177 and for winter leggings was the most popular item with a frequency of 157.
+  ## When do users leave a review? 
+ - Most purchases are never reviewed, and the dataset does not include review timestamps.
+ - Reviews are more common amongst monthly and quarterly shoppers, suggesting there is a time gap between purchase and review, typically a month or longer.
 
 
-
-  3. What is the effect of promo codes on the dollar amount of purchases? For orders where a promo code wasn't used the average amount per order was $30.17. For orders where a promo code was used the average amound per order was $50.02. This tells us the promotions were effective in driving revenue.
-
-
-  4. When do users leave a review? It is diffcult to answer this question and pinpoint when reviews are left as most purchases go unreviewed and theres no date or time of review info available. I can defintively say there is a a time gap between purchases and when you review that purchase. Most reviews are done by quarterly and monthly shoppers. So tough to answer the question exactly but most users leave a review a month or longer purchasing.
